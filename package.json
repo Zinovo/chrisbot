@@ -5,7 +5,7 @@
   "description": "Sample Slack app that responds to an Slack slash command with an interactive message",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "DEBUG=axios nodemon src/index.js"
+    "start": "DEBUG=axios node src/index.js"
   },
   "authors": [
     "Sachin Ranchod <sranchod@slack-corp.com>",
