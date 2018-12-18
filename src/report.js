@@ -21,15 +21,15 @@ const sendConfirmation = (report) => {
         text: report.text,
         fields: [
           {
-            title: 'What you did yesterday',
+            title: `What ${report.userName} accomplished yesterday`,
             value: report.yesterday,
           },
           {
-            title: 'What you did today',
+            title: `${report.userName}'s goals for today`,
             value: report.today || 'None provided',
           },
           {
-            title: 'Blockers',
+            title: 'Blockers...',
             value: report.blockers
           },
         ],
