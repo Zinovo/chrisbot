@@ -17,7 +17,7 @@ const sendConfirmation = (report) => {
     text: 'Standup submitted!',
     attachments: JSON.stringify([
       {
-        title: `Standup submitted for ${report.userName}`,
+        title: `${report.userName}`,
         text: report.text,
         fields: [
           {
