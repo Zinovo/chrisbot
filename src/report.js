@@ -36,7 +36,12 @@ const sendConfirmation = (report) => {
       },
     ]),
   })).then((result) => {
-    console.log(result);
+    if(result.data){
+      let { ok } = result.data; 
+      if(ok === false){
+        throw new Error(`Failed with error: ${result.data}`); 
+      }
+    }
     axios.post('https://slack.com/api/chat.postMessage', qs.stringify({
       token: process.env.SLACK_ACCESS_TOKEN,
       channel: userIdForPost,
