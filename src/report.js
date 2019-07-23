@@ -37,6 +37,7 @@ const sendConfirmation = (report) => {
     ]),
   })).then((result) => {
     if(result.data){
+      console.log(result.data);
       let { ok } = result.data; 
       if(ok === false){
         throw new Error(`Failed with error: ${result.data}`); 
