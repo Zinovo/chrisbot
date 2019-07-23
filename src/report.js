@@ -10,9 +10,10 @@ let userIdForPost = '';
  *  chat.postMessage to the user who created it
  */
 const sendConfirmation = (report) => {
+  console.log(report); 
   axios.post('https://slack.com/api/chat.postMessage', qs.stringify({
     token: process.env.SLACK_ACCESS_TOKEN,
-    channel: '#int_zinovostandup',
+    channel: 'CDUSHK5NH',
     as_user: true,
     text: 'Standup submitted!',
     attachments: JSON.stringify([
@@ -36,6 +37,7 @@ const sendConfirmation = (report) => {
       },
     ]),
   })).then((result) => {
+    console.log(result);
     axios.post('https://slack.com/api/chat.postMessage', qs.stringify({
       token: process.env.SLACK_ACCESS_TOKEN,
       channel: userIdForPost,
