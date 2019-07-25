@@ -43,19 +43,20 @@ const sendConfirmation = (report) => {
         throw new Error(`Failed with error: ${result.data}`); 
       }
     }
+  }).catch((err) => {
+    debug('sendConfirmation error: %o', err);
+    console.error(err);
     axios.post('https://slack.com/api/chat.postMessage', qs.stringify({
       token: process.env.SLACK_ACCESS_TOKEN,
       channel: userIdForPost,
       as_user: true,
-      text: 'Thanks for submitting!'
+      text: `Uh oh! There was an error with your submission: ${err.message}`
     })).then((res) => {
-      console.log('posted personal message')
-      debug('sendConfirmation: %o', result.data);
+      console.log('posted error message');
+    }).catch((err) => {
+      console.log(`Error posting to Slack: ${err.message}`);
     })
-  }).catch((err) => {
-    debug('sendConfirmation error: %o', err);
-    console.error(err);
-  });
+  })
 };
 
 const create = (userId, submission) => {
