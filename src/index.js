@@ -54,21 +54,21 @@ app.post('/command', (req, res) => {
         submit_label: 'Submit',
         elements: [
           {
-            label: `Yesterday's Work`,
+            label: `How did you crush it yesterday?`,
             type: 'textarea',
             name: 'yesterday',
             hint: 'How did you crush it yesterday?',
             optional: true,
           },
           {
-            label: `Today's Plan`,
+            label: `How will you use your super powers today?`,
             type: 'textarea',
             name: 'today',
             hint: 'How will you use your super powers today?',
             optional: true,
           },
           {
-            label: `Blockers`,
+            label: `What is currently standing in your way?`,
             type: 'textarea',
             name: 'blockers',
             hint: `What is currently standing in your way?`,
