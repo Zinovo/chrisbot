@@ -29,7 +29,7 @@ const sendConfirmation = (report) => {
             value: report.today || 'None provided',
           },
           {
-            title: `Things standing in ${report.userName}'s way`,
+            title: `Things standing in their way`,
             value: report.blockers
           },
         ],
